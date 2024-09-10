@@ -25,7 +25,47 @@ This Python script uses the [Pyrogram](https://docs.pyrogram.org/) library to au
 - [Pyrogram](https://docs.pyrogram.org/) library
 - Telegram API credentials (API ID and API Hash)
 
-Install the necessary libraries using:
-
-```bash
+## Install the necessary libraries using:
 pip install pyrogram
+
+## Setup
+Clone the repository:
+
+git clone https://github.com/inhumantt/telegram-forward-bot.git
+
+cd telegram-forward-bot
+
+## Create a new session using your Telegram credentials:
+Set up your api_id, api_hash, and phone_number in the script.
+Ensure the bot or account running the script is a member of the target chats/groups and has the necessary permissions.
+
+## Run the bot:
+python main.py
+
+## Configuration
+Source Chats: Define the source chat IDs in logs_chat and ulp_chat.
+Destination Chats: Set the destination chats d_logs and d_ulp where documents should be forwarded.
+
+Example:
+
+logs_chat = [-1002489198224, -1001882359316]  # List of source chat IDs
+
+ulp_chat = [-1002075184339, -1001917800796]   # List of another group of source chat IDs
+
+d_logs = -1002498591475  # Destination for logs_chat
+
+d_ulp = -1002351230715   # Destination for ulp_chat
+
+## Usage
+The bot will automatically forward documents sent in any of the source chats to their respective destination chats, while avoiding duplicates.
+
+## Logging
+Logs provide detailed information on:
+
+## Received documents
+Skipped duplicate files
+Forwarding success or failure
+Errors and exceptions
+
+## License
+This project is licensed under the MIT License.
